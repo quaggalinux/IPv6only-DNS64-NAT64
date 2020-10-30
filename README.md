@@ -9,7 +9,7 @@ IPv6 only云主机使用DNS64/NAT64访问IPv4 only网站浅析
 
 扯远了，回到IPv6 only云主机使用DNS64/NAT64访问IPv4 only网站的话题，标准RFC的书包就不丢了，简单来讲IPv6有2的128次方的地址数量，对比于IPv4的2的32次方地址数量，IPv6随便给一个/96的子网就能把现在的IPv4互联网地址给全1:1映射了，所以当时制定IPv6标准的时候就很大方的预留了一个/16保留段地址头（有兴趣的机友可以查这个保留段的地址头）的子网段给IPv4折腾映射，可以映射现在整个IPv4互联网2的80次方那么多次   
    
-有了这个子网段映射，相应的就有DNS64这个从IPv6寻找IPv4域名，然后映射成IPv6虚地址的DNS解析标准，也相应的有DNS64域名服务器，如谷歌的DNS64服务器介绍连接“https://developers.google.com/speed/public-dns/docs/dns64”， Google Public DNS64  |  Google Developers  ，当然这些公共的DNS64服务提供商还有很多  
+有了这个子网段映射，相应的就有DNS64这个从IPv6寻找域名对应IPv4地址，然后将这个IPv4地址映射成IPv6虚地址的DNS解析标准，也相应的有DNS64域名服务器，如谷歌的DNS64服务器介绍连接“https://developers.google.com/speed/public-dns/docs/dns64”， Google Public DNS64  |  Google Developers  ，当然这些公共的DNS64服务提供商还有很多  
    
 有了这个DNS64服务器，那这个IPv6 only云主机能够访问IPv4 only的网站吗？机友们高兴太早了，DNS64域名服务器只是给你映射好这个地址，至于谁去把左面IPv6虚地址访问右面IPv4实地址的会话过程Hold住，像NAT一样为机友们工作呢？这个就像上面谷歌连接里面轻飘飘的说道，不要找我，我是吃瓜群众，你找NAT64服务器去     
    
